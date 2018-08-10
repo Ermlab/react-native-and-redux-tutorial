@@ -17,3 +17,9 @@ export function stopTimer() {
         type: actionTypes.STOP_TIMER
     }
 }
+
+export function timerTick() {
+    return {
+        type: actionTypes.TIMER_TICK
+    }
+}

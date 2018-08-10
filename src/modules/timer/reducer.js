@@ -12,8 +12,12 @@ export default function(state = initialState, action) {
       return {
         ...state,
         isOn: true,
-        time: action.time,
       };
+    case actionTypes.TIMER_TICK:
+      return {
+        ...state,
+        time
+      }
     case actionTypes.STOP_TIMER:
       return {
         ...state,
