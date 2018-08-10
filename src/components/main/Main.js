@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { View, Text, StyleSheet, Picker, TouchableOpacity } from 'react-native';
+import PropTypes from 'prop-types';
 
 export const styles = StyleSheet.create({
   container: {
@@ -45,12 +46,13 @@ class Main extends Component {
   }
 
   render() {
+    const { boilType, selectBoilType } = this.props;
     const { type } = this.state;
     return (
       <View style={styles.container}>
         <Text style={styles.title}>EGGook</Text>
         <Text style={styles.text}>Wybierz sposób ugotowania jajka</Text>
-        <Picker style={styles.picker} selectedValue={type} onValueChange={itemValue => this.setState({ type: itemValue })}>
+        <Picker style={styles.picker} selectedValue={boilType} onValueChange={itemValue => selectBoilType(itemValue)}>
           <Picker.Item label="Na twardo" value="hard" />
           <Picker.Item label="Średnio" value="medium" />
           <Picker.Item label="Miękko" value="soft" />
@@ -64,5 +66,10 @@ class Main extends Component {
     );
   }
 }
+
+Main.propTypes = {
+  boilType: PropTypes.string.isRequired,
+  selectBoilType: PropTypes.func.isRequired,
+};
 
 export default Main;

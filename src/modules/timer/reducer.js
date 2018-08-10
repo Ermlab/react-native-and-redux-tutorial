@@ -16,8 +16,8 @@ export default function(state = initialState, action) {
     case actionTypes.TIMER_TICK:
       return {
         ...state,
-        time
-      }
+        time: action.payload.time,
+      };
     case actionTypes.STOP_TIMER:
       return {
         ...state,
@@ -25,7 +25,8 @@ export default function(state = initialState, action) {
       };
     case actionTypes.SELECT_BOIL_TYPE:
       return {
-        boilType: action.boilType,
+        ...state,
+        boilType: action.payload,
       };
     default:
       return {
