@@ -5,15 +5,15 @@ export const selectBoilType = type => ({
   payload: type,
 });
 
-export const startTimer = () => ({
+export const startTimer = startedTime => ({
   type: actionTypes.START_TIMER,
+  payload: startedTime,
 });
 
 export const stopTimer = () => ({
   type: actionTypes.STOP_TIMER,
 });
 
-export const timerTick = time => ({
+export const timerTick = () => ({
   type: actionTypes.TIMER_TICK,
-  payload: time,
 });

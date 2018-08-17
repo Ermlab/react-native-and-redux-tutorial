@@ -15,7 +15,7 @@ Main.propTypes = {};
 
 const mapStateToProps = state => ({
   isOn: state.timer.isOn,
-  time: state.timer.time,
+  timeLeft: state.timer.timeLeft,
   boilType: state.timer.boilType,
 });
 
