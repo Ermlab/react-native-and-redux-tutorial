@@ -3,8 +3,8 @@ import { BOIL_TYPES } from '../../config/constans';
 
 const initialState = {
   isOn: false,
-  timeLeft: BOIL_TYPES[0].timeInSeconds,
   boilType: BOIL_TYPES[0],
+  timeLeft: BOIL_TYPES[0].timeInSeconds,
   startedTime: null,
 };
 
@@ -30,6 +30,7 @@ export default function(state = initialState, action) {
       return {
         ...state,
         isOn: false,
+        timeLeft: state.boilType.timeInSeconds,
       };
     case actionTypes.SELECT_BOIL_TYPE:
       return {

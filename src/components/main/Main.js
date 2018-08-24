@@ -2,41 +2,7 @@ import React, { Component } from 'react';
 import { View, Text, StyleSheet, Picker, TouchableOpacity } from 'react-native';
 import PropTypes from 'prop-types';
 import { BOIL_TYPES } from '../../config/constans';
-
-export const styles = StyleSheet.create({
-  container: {
-    marginTop: 20,
-    flex: 1,
-    flexDirection: 'column',
-    justifyContent: 'space-around',
-    alignItems: 'center',
-  },
-  title: {
-    fontSize: 40,
-    fontWeight: '500',
-    flex: 1,
-  },
-  text: {
-    fontSize: 25,
-  },
-  button: {
-    backgroundColor: 'red',
-    borderRadius: 20,
-    paddingHorizontal: 50,
-    justifyContent: 'center',
-    alignItems: 'center',
-    paddingVertical: 10,
-  },
-  timer: {
-    fontSize: 40,
-    fontWeight: '500',
-    flex: 3,
-  },
-  picker: {
-    height: 50,
-    width: 250,
-  },
-});
+import { styles } from './style';
 
 let timer;
 
@@ -69,7 +35,11 @@ class Main extends Component {
 
     return (
       <View style={styles.container}>
-        <Text style={styles.title}>EGGook</Text>
+        <View style={styles.row}>
+          <Text style={styles.title}>EGG</Text>
+          <Text style={styles.title}>OO</Text>
+          <Text style={styles.title}>k</Text>
+        </View>
         <Text style={styles.text}>Wybierz sposób ugotowania jajka</Text>
         <Picker enabled={!isOn} style={styles.picker} selectedValue={boilType} onValueChange={boilType => this.handleSelectBoilType(boilType)}>
           {BOIL_TYPES.map(t => (
