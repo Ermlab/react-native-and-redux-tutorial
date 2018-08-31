@@ -17,3 +17,7 @@ export const stopTimer = () => ({
 export const timerTick = () => ({
   type: actionTypes.TIMER_TICK,
 });
+
+export const notify = () => ({
+  type: actionTypes.NOTIFY,
+});

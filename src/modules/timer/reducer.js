@@ -6,6 +6,7 @@ const initialState = {
   boilType: BOIL_TYPES[0],
   timeLeft: BOIL_TYPES[0].timeInSeconds,
   startedTime: null,
+  eggBoiled: false,
 };
 
 export default function(state = initialState, action) {
@@ -15,6 +16,7 @@ export default function(state = initialState, action) {
         ...state,
         isOn: true,
         startedTime: action.payload,
+        eggBoiled: false,
       };
     case actionTypes.TIMER_TICK: {
       const timePassedInSeconds = Math.round((Date.now() - state.startedTime) / 1000);
@@ -37,10 +39,16 @@ export default function(state = initialState, action) {
         ...state,
         boilType: action.payload,
         timeLeft: action.payload.timeInSeconds,
+        eggBoiled: false,
       };
     default:
       return {
         ...state,
+      };
+    case actionTypes.NOTIFY:
+      return {
+        ...state,
+        eggBoiled: true,
       };
   }
 }
