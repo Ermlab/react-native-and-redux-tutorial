@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
-import { View, Text, StyleSheet, Picker, TouchableOpacity } from 'react-native';
+import { View, Text, Picker, TouchableOpacity } from 'react-native';
 import PropTypes from 'prop-types';
+import { Ionicons } from '@expo/vector-icons';
 import { BOIL_TYPES } from '../../config/constans';
 import { styles } from './style';
 
@@ -36,14 +37,15 @@ class Main extends Component {
     return (
       <View style={styles.container}>
         <View style={styles.row}>
-          <Text style={styles.title}>EGG</Text>
-          <Text style={styles.title}>OO</Text>
+          <Text style={styles.title}>Egg C</Text>
+          <Ionicons style={[styles.title, styles.icon]} name="ios-egg-outline" />
+          <Ionicons style={styles.title} name="ios-egg-outline" />
           <Text style={styles.title}>k</Text>
         </View>
         <Text style={styles.text}>Wybierz sposób ugotowania jajka</Text>
         <Picker enabled={!isOn} style={styles.picker} selectedValue={boilType} onValueChange={boilType => this.handleSelectBoilType(boilType)}>
           {BOIL_TYPES.map(t => (
-            <Picker.Item key={t.name} label={t.name} value={t} />
+            <Picker.Item style={styles.text} key={t.name} label={t.name} value={t} />
           ))}
         </Picker>
         <TouchableOpacity onPress={this.handleStartStopPress} style={styles.button}>

@@ -10,12 +10,12 @@ export const styles = StyleSheet.create({
   },
   title: {
     fontSize: 40,
-    fontWeight: '500',
     // flex: 1,
-    backgroundColor: 'blue',
+    fontFamily: 'font',
   },
   text: {
     fontSize: 25,
+    fontFamily: 'font',
   },
   button: {
     backgroundColor: 'red',
@@ -36,5 +36,9 @@ export const styles = StyleSheet.create({
   },
   row: {
     flexDirection: 'row',
+    alignItems: 'center',
+  },
+  icon: {
+    fontWeight: '400',
   },
 });
